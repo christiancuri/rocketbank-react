@@ -1,0 +1,102 @@
+{
+  "name": "rocketbank-react",
+  "version": "1.0.0",
+  "title": "RocketBank",
+  "author": {
+    "name": "Christian Curi <c.christiancuri@gmail.com>",
+    "url": "https://christiancuri.dev"
+  },
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "preinstall": "npx only-allow yarn",
+    "lint:fix": "yarn run lint -- --fix",
+    "lint": "eslint ./src --ext js,jsx,ts,tsx",
+    "validate": "prettier --check \"src/**/*.(tsx|ts)\" && eslint --ext js,jsx,ts,tsx . --max-warnings=0 && tsc",
+    "postinstall": "husky install",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@emotion/react": "11.4.1",
+    "@emotion/styled": "11.3.0",
+    "@mui/icons-material": "5.0.3",
+    "@mui/lab": "5.0.0-alpha.50",
+    "@mui/material": "5.0.3",
+    "@mui/styles": "5.0.1",
+    "axios": "^0.26.0",
+    "chart.js": "2.9.4",
+    "clsx": "1.1.1",
+    "date-fns": "2.25.0",
+    "history": "5.0.1",
+    "nprogress": "0.2.0",
+    "numeral": "2.0.6",
+    "prop-types": "15.7.2",
+    "react": "17.0.2",
+    "react-app-rewire-alias": "^1.1.7",
+    "react-app-rewired": "^2.2.1",
+    "react-chartjs-2": "2.11.1",
+    "react-custom-scrollbars-2": "4.4.0",
+    "react-dom": "17.0.2",
+    "react-input-mask": "^2.0.4",
+    "react-query": "^3.34.16",
+    "react-router": "6.0.0-beta.0",
+    "react-router-dom": "6.0.0-beta.0",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^8.2.0",
+    "stylis": "4.0.10",
+    "stylis-plugin-rtl": "2.1.0",
+    "sweetalert2": "^11.4.4",
+    "sweetalert2-react-content": "^4.2.0",
+    "web-vitals": "2.1.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.15.8",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/nprogress": "0.2.0",
+    "@types/numeral": "2.0.2",
+    "@types/react": "17.0.29",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-input-mask": "^3.0.1",
+    "@types/react-router-dom": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "14.0.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-import-helpers": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.26.1",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "^7.0.4",
+    "node-sass": "6.0.1",
+    "prettier": "2.4.1",
+    "react-error-overlay": "^6.0.9",
+    "typescript": "4.4.4"
+  }
+}
