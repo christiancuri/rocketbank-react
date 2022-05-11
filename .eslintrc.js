@@ -89,7 +89,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'react/forbid-prop-types': 'off',
     'react/default-props-match-prop-types': 'off',
-    'import/no-self-import': 'off'
+    'import/no-self-import': 'off',
   },
   settings: {
     'import/resolver': {

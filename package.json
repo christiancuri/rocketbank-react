@@ -19,12 +19,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@date-io/date-fns": "^2.13.2",
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
     "@mui/icons-material": "5.0.3",
     "@mui/lab": "5.0.0-alpha.50",
     "@mui/material": "5.0.3",
     "@mui/styles": "5.0.1",
+    "@mui/x-date-pickers": "^5.0.0-alpha.2",
     "axios": "^0.26.0",
     "chart.js": "2.9.4",
     "clsx": "1.1.1",
