@@ -40,7 +40,8 @@ export function usePagination(): [number, number, PaginationState['gotoPage']] {
   const [page, setPage] = useState(1);
   const [, setSearchParams] = useSearchParams();
 
-  const gotoPage = async (page: number) => {
+  const gotoPage = async (newPage: number) => {
+    const page = Math.max(newPage, 1);
     setSearchParams(new URLSearchParams(`page=${page}`));
     setSkip((page - 1) * PaginationOptions.limit);
     setPage(page);

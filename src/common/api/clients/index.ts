@@ -12,7 +12,7 @@ export async function getAllClients(skip = 0, limit = PaginationOptions.limit) {
     clients: Client[];
     pages: number;
     totalClients: number;
-  }>(`/client?skip=${skip}&limit=${limit}`);
+  }>(`/client?skip=${Math.max(skip, 0)}&limit=${limit}`);
 }
 
 export async function createClient(client: CreateClientPayload) {

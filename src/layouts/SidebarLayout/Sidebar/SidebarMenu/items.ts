@@ -31,7 +31,7 @@ const menuItems: MenuItems[] = [
     heading: 'App',
     items: [
       {
-        name: 'Access Keys',
+        name: 'Clients',
         icon: SupervisedUserCircleIcon,
         link: '/management/clients'
       }
