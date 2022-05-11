@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
+import { differenceInYears, format } from 'date-fns';
 import {
   Client,
   UpdateClientPayload
@@ -139,10 +140,13 @@ export const ClientsTable: FC = () => {
         <Table style={{ position: 'relative' }}>
           <TableHead>
             <TableRow>
-              <TableCell padding="checkbox">#</TableCell>
+              <TableCell width="10%" align="center">
+                #
+              </TableCell>
               <TableCell>Name</TableCell>
               <TableCell>CPF</TableCell>
               <TableCell>Birthdate</TableCell>
+              <TableCell>Age</TableCell>
               <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -150,10 +154,30 @@ export const ClientsTable: FC = () => {
             {isLoading ? (
               <Loading />
             ) : (
-              clients?.map((client, index) => {
+              clients?.map((client) => {
                 return (
                   <TableRow hover key={client._id}>
-                    <TableCell padding="checkbox">{index}</TableCell>
+                    <TableCell padding="checkbox" align="center">
+                      <Tooltip title={client._id} arrow>
+                        <Typography
+                          variant="body1"
+                          fontWeight="bold"
+                          color="text.primary"
+                          gutterBottom
+                          noWrap
+                          marginLeft={2}
+                        >
+                          {client?._id
+                            .split('')
+                            .reverse()
+                            .join('')
+                            .substring(0, 7)
+                            .split('')
+                            .reverse()
+                            .join('')}
+                        </Typography>
+                      </Tooltip>
+                    </TableCell>
                     <TableCell>
                       <Typography
                         variant="body1"
@@ -184,7 +208,25 @@ export const ClientsTable: FC = () => {
                         gutterBottom
                         noWrap
                       >
-                        {client.birthdate}
+                        {client.birthdate
+                          ? format(new Date(client.birthdate), 'dd/MM/yyyy')
+                          : 'N/A'}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        variant="body1"
+                        fontWeight="bold"
+                        color="text.primary"
+                        gutterBottom
+                        noWrap
+                      >
+                        {client.birthdate
+                          ? differenceInYears(
+                              new Date(),
+                              new Date(client.birthdate)
+                            )
+                          : 'N/A'}
                       </Typography>
                     </TableCell>
                     <TableCell align="right">
