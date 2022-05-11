@@ -1,10 +1,8 @@
 import { useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { useAuth } from 'src/contexts/AuthContext';
 
 // import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
-import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 // import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
@@ -14,9 +12,6 @@ import {
   Button,
   Divider,
   Hidden,
-  List,
-  ListItem,
-  ListItemText,
   Popover,
   Typography
 } from '@mui/material';
@@ -102,25 +97,6 @@ function HeaderUserbox() {
           </UserBoxText>
         </MenuUserBox>
         <Divider sx={{ mb: 0 }} />
-        <List sx={{ p: 1 }} component="nav">
-          {/* <ListItem button to="/management/profile/details" component={NavLink}>
-            <AccountBoxTwoToneIcon fontSize="small" />
-            <ListItemText primary="My Profile" />
-          </ListItem>
-          <ListItem button to="/dashboards/messenger" component={NavLink}>
-            <InboxTwoToneIcon fontSize="small" />
-            <ListItemText primary="Messenger" />
-          </ListItem> */}
-          <ListItem
-            button
-            to="/settings"
-            component={NavLink}
-            onClick={() => setOpen(false)}
-          >
-            <AccountTreeTwoToneIcon fontSize="small" />
-            <ListItemText primary="Configurações" />
-          </ListItem>
-        </List>
         <Divider />
         <Box sx={{ m: 1 }}>
           <Button color="primary" fullWidth onClick={onSignOut}>
