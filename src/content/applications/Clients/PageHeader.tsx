@@ -9,12 +9,13 @@ import { ClientFormModal } from './ClientFormModal';
 import { useClients } from './context';
 
 function PageHeader() {
-  const { createClient } = useClients();
+  const { createClient, gotoPage } = useClients();
 
   const [createModalOpen, setCreateModalOpen] = useState(false);
 
   const onCreateClient = async (client: CreateClientPayload) => {
     await createClient(client);
+    gotoPage(1);
   };
 
   return (
